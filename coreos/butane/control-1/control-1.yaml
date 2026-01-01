@@ -1,0 +1,64 @@
+variant: fcos
+version: 1.6.0
+
+storage:
+  disks:
+    - # Block device the OS was booted from
+      device: /dev/disk/by-id/coreos-boot-disk
+      wipe_table: false
+      partitions:
+        - label: root
+          number: 4
+          size_mib: 32768
+
+        - label: var
+          size_mib: 32768
+
+        - label: swap
+          size_mib: 32768
+
+        - label: ceph-block
+          size_mib: 0
+
+  filesystems:
+    - device: /dev/disk/by-partlabel/var
+      path: /var
+      format: xfs
+      with_mount_unit: true
+
+    - device: /dev/disk/by-partlabel/swap
+      format: swap
+      wipe_filesystem: true
+      with_mount_unit: true
+
+  files:
+    - path: /etc/hostname
+      mode: 0644
+      overwrite: true
+      contents:
+        inline: control-1
+    
+    - path: /etc/yum.repos.d/rancher-rke2-1-32-latest.repo
+      mode: 0644
+      overwrite: true
+      contents:
+        local: common/repo/rancher-rke2.repo
+    
+    - path: /etc/yum.repos.d/kubernetes.repo
+      mode: 0644
+      overwrite: true
+      contents:
+        local: common/repo/kubernetes.repo
+
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys_local:
+        - common/users/core/id_ed25519.pub
+
+    - name: hdo
+      groups:
+        - wheel
+        - sudo
+      ssh_authorized_keys_local:
+        - common/users/hdo/id_ed25519.pub

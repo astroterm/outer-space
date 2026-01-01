@@ -1,0 +1,14 @@
+[Unit]
+Description=Install RKE2
+Wants=network-online.target
+After=network-online.target
+Before=zincati.service
+ConditionPathExists=!/var/lib/%N.stamp
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=rpm-ostree install --apply-live --alow-inactive --assumeyes rke2-server kubectl
+
+[Install]
+WantedBy=multi-user.target
