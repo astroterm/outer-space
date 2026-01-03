@@ -38,6 +38,12 @@ storage:
       contents:
         inline: control-1
     
+    - path: /etc/rancher/rke2/config.yaml
+      mode: 0600
+      overwrite: false
+      contents:
+        local: nodes/control-1/rancherconfig.yaml
+    
     - path: /etc/yum.repos.d/rancher-rke2-1-32-latest.repo
       mode: 0644
       overwrite: true
