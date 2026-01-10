@@ -68,3 +68,9 @@ passwd:
         - sudo
       ssh_authorized_keys_local:
         - common/users/hdo/id_ed25519.pub
+
+systemd:
+  units:
+    - name: install-rke2.service
+      enabled: true
+      contents_local: common/units/install-rke2.service
