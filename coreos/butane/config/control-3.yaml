@@ -38,18 +38,6 @@ storage:
       contents:
         inline: control-3
     
-    - path: /etc/rancher/rke2/config.yaml
-      mode: 0600
-      overwrite: false
-      contents:
-        local: nodes/control-3/rancherconfig.yaml
-    
-    - path: /etc/yum.repos.d/rancher-rke2-1-32-latest.repo
-      mode: 0644
-      overwrite: true
-      contents:
-        local: common/repo/rancher-rke2.repo
-    
     - path: /etc/yum.repos.d/kubernetes.repo
       mode: 0644
       overwrite: true
@@ -71,6 +59,6 @@ passwd:
 
 systemd:
   units:
-    - name: install-rke2.service
+    - name: install-k8s.service
       enabled: true
-      contents_local: common/units/install-rke2.service
+      contents_local: common/units/install-k8s.service

@@ -1,5 +1,5 @@
 [Unit]
-Description=Install RKE2
+Description=Install Kubernetes (RPM-OSTree)
 Wants=network-online.target
 After=network-online.target
 RequiresMountsFor=/var
@@ -9,7 +9,7 @@ ConditionPathExists=!/var/lib/%N.stamp
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/rpm-ostree install --allow-inactive --assumeyes rke2-server
+ExecStart=/usr/bin/rpm-ostree install --allow-inactive --assumeyes kubeadm kubectl
 ExecStartPost=/usr/bin/touch /var/lib/%N.stamp
 ExecStartPost=/usr/bin/systemctl reboot --no-block
 
