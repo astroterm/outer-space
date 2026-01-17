@@ -1,0 +1,19 @@
+apiVersion: kubeadm.k8s.io/v1beta4
+kind: ClusterConfiguration
+
+networking:
+  serviceSubnet: "10.96.0.0/16"
+  podSubnet: "10.128.0.0/16"
+  dnsDomain: "cluster.local"
+
+clusterName: "outer-space"
+dns:
+  disabled: true
+proxy:
+  disabled: true
+
+---
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+
+cgroupDriver: systemd

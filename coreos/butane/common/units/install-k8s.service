@@ -9,7 +9,7 @@ ConditionPathExists=!/var/lib/%N.stamp
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/rpm-ostree install --allow-inactive --assumeyes kubeadm kubectl
+ExecStart=/usr/bin/rpm-ostree install --allow-inactive --assumeyes kubectl kubeadm container-selinux cri-o kubelet
 ExecStartPost=/usr/bin/touch /var/lib/%N.stamp
 ExecStartPost=/usr/bin/systemctl reboot --no-block
 

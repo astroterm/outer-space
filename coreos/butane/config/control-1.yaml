@@ -43,6 +43,12 @@ storage:
       overwrite: true
       contents:
         local: common/repo/kubernetes.repo
+    
+    - path: /etc/yum.repos.d/cri-o.repo
+      mode: 0644
+      overwrite: true
+      contents:
+        local: common/repo/cri-o.repo
 
 passwd:
   users:
@@ -62,3 +68,6 @@ systemd:
     - name: install-k8s.service
       enabled: true
       contents_local: common/units/install-k8s.service
+
+    - name: crio.service
+      enabled: true
