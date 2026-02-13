@@ -14,9 +14,6 @@ storage:
         - label: var
           size_mib: 32768
 
-        - label: swap
-          size_mib: 32768
-
         - label: ceph-block
           size_mib: 0
 
@@ -24,11 +21,6 @@ storage:
     - device: /dev/disk/by-partlabel/var
       path: /var
       format: xfs
-      with_mount_unit: true
-
-    - device: /dev/disk/by-partlabel/swap
-      format: swap
-      wipe_filesystem: true
       with_mount_unit: true
 
   files:
