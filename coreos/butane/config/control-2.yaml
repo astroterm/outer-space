@@ -12,7 +12,7 @@ storage:
           size_mib: 32768
 
         - label: var
-          size_mib: 32768
+          size_mib: 65535
 
         - label: ceph-block
           size_mib: 0

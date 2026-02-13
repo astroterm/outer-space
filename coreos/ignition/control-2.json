@@ -34,7 +34,7 @@
           },
           {
             "label": "var",
-            "sizeMiB": 32768
+            "sizeMiB": 65535
           },
           {
             "label": "ceph-block",
