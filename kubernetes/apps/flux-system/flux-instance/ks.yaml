@@ -15,7 +15,7 @@ spec:
 
   sourceRef:
     kind: GitRepository
-    name: home-infra
+    name: outer-space
 
   dependsOn:
     - name: flux-operator
