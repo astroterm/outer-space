@@ -23,8 +23,8 @@ spec:
     domain: "cluster.local"
   sync:
     kind: GitRepository
-    name: home-infra
+    name: outer-space
     path: kubernetes/flux
     pullSecret: flux-system
     ref: refs/heads/main
-    url: ssh://git@github.com/astroterm/home-infra.git
+    url: ssh://git@github.com/astroterm/outer-space.git
