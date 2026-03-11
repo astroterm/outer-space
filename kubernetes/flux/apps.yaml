@@ -10,7 +10,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: home-infra
+    name: outer-space
   postBuild:
     substituteFrom:
       - kind: ConfigMap
