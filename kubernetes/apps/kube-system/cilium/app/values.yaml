@@ -1,5 +1,6 @@
 ---
 ipv4NativeRoutingCIDR: 10.244.0.0/16
+autoDirectNodeRoutes: true
 routingMode: native
 
 rollOutCiliumPods: true
