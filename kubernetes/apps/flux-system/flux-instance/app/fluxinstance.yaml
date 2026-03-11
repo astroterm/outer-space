@@ -1,0 +1,30 @@
+apiVersion: fluxcd.controlplane.io/v1
+kind: FluxInstance
+metadata:
+  name: flux
+  namespace: flux-system
+  annotations:
+    fluxcd.controlplane.io/reconcileEvery: "1h"
+    fluxcd.controlplane.io/reconcileTimeout: "10m"
+spec:
+  distribution:
+    version: 2.6.3
+    registry: "ghcr.io/fluxcd"
+    artifact: "oci://ghcr.io/controlplaneio-fluxcd/flux-operator-manifests"
+  components:
+    - source-controller
+    - kustomize-controller
+    - helm-controller
+    - notification-controller
+  cluster:
+    type: kubernetes
+    multitenant: false
+    networkPolicy: false
+    domain: "cluster.local"
+  sync:
+    kind: GitRepository
+    name: home-infra
+    path: kubernetes/flux
+    pullSecret: flux-system
+    ref: refs/heads/main
+    url: ssh://git@github.com/astroterm/home-infra.git
