@@ -1,1 +1,3 @@
 replicaCount: 2
+service:
+  clusterIP: 10.96.0.10
