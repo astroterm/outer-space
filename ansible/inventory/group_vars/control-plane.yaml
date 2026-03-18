@@ -1,5 +1,0 @@
-pod_cidr: 10.128.0.0/16
-
-cilium_version: 1.19.0
-gateway_crd_version: v1.4.1
-prometheus_crd_version: "v0.89.0"
