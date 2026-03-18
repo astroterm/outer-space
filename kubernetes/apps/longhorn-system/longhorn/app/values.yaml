@@ -6,3 +6,7 @@ defaultSettings:
   storageOverProvisioningPercentage: 200
   replicaSoftAntiAffinity: false
   replicaAutoBalance: least-effort
+
+defaultBackupStore:
+  backupTarget: s3://outer-space@auto/
+  backupTargetCredentialSecret: longhorn-backup
