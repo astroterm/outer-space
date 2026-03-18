@@ -5,14 +5,14 @@ metadata:
   name: &app tailscale
   namespace: flux-system
 spec:
-  targetNamespace: &namespace networking
+  targetNamespace: &namespace netadmin
 
   interval: 1h
   retryInterval: 5m
   timeout: 10m
   prune: true
 
-  path: ./kubernetes/apps/networking/tailscale/app
+  path: ./kubernetes/apps/netadmin/tailscale/app
 
   sourceRef:
     kind: GitRepository
