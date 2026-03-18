@@ -1,0 +1,9 @@
+oauth:
+  valuesFrom:
+    - kind: Secret
+      name: tailscale-auth
+      valuesKey: clientId
+    
+    - kind: Secret
+      name: tailscale-auth
+      valuesKey: clientSecret
