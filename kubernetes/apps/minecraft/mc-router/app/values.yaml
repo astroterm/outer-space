@@ -1,0 +1,5 @@
+services:
+  minecraft:
+    type: LoadBalancer
+    annotations:
+      lbipam.cilium.io/ips: 192.168.2.165
