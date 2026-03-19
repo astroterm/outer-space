@@ -9,7 +9,6 @@ spec:
       value: 192.168.2.128
   gatewayClassName: cilium
   listeners:
-listeners:
     - name: astroterm-org
       hostname: "*.astroterm.org"
       port: 443
