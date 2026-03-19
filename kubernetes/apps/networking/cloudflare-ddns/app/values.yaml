@@ -7,7 +7,6 @@ controllers:
           tag: 1.15.1
         env:
           TZ: Australia/Sydney
-          DOMAINS: astro1.dev, astroterm.dev, astroterm.org, astx.dev, astxlab.dev
           IP6_PROVIDER: none
         envFrom:
           - secretRef:
