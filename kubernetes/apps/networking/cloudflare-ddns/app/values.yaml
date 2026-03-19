@@ -1,0 +1,29 @@
+controllers:
+  cloudflare-ddns:
+    containers:
+      app:
+        image:
+          repository: docker.io/favonia/cloudflare-ddns
+          tag: 1.15.1
+        env:
+          TZ: Australia/Sydney
+          DOMAINS: astro1.dev, astroterm.dev, astroterm.org, astx.dev, astxlab.dev
+          IP6_PROVIDER: none
+        envFrom:
+          - secretRef:
+              name: cloudflare-secret
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          capabilities: { drop: ["ALL"] }
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+          limits:
+            memory: 100Mi
+defaultPodOptions:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
