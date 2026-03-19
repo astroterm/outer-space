@@ -14,7 +14,7 @@ ipam:
 gatewayAPI:
   enabled: true
   gatewayClass:
-    create: true
+    create: 'true'
 ipv4:
   enabled: true
 l2announcements:
