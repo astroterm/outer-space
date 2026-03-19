@@ -13,6 +13,8 @@ ipam:
   mode: kubernetes
 gatewayAPI:
   enabled: true
+  gatewayClass:
+    create: true
 ipv4:
   enabled: true
 l2announcements:
