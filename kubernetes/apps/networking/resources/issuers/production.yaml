@@ -13,7 +13,6 @@ spec:
             apiTokenSecretRef:
               name: cloudflare-secret
               key: ZONE_API_TOKEN
-              namespace: netadmin
         selector:
           dnsZones:
             - "astro1.dev"
