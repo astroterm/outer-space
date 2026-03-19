@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: astx-cert
+  namespace: networking
+spec:
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - "*.astx.dev"
+    - "*.astxlab.dev"
+    - "astx.dev"
+    - "astxlab.dev"
+  secretName: astx-cert

@@ -1,0 +1,66 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: http-gateway
+  namespace: networking
+spec:
+  addresses:
+    - type: IPAddress
+      value: 192.168.2.128
+  gatewayClassName: cilium
+  listeners:
+listeners:
+    - name: astroterm-org
+      hostname: "*.astroterm.org"
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - name: astroterm-cert
+
+    - name: astroterm-dev
+      hostname: "*.astroterm.dev"
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - name: astroterm-cert
+    
+    - name: astx-dev
+      hostname: "*.astx.dev"
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - name: astx-cert
+
+    - name: astxlab-dev
+      hostname: "*.astxlab.dev"
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - name: astx-cert
+    
+    - name: astro1-dev
+      hostname: "*.astro1.dev"
+      port: 443
+      protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        certificateRefs:
+          - name: astro-cert
