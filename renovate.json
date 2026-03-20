@@ -4,18 +4,18 @@
     "config:recommended"
   ],
   "kubernetes": {
-    "managerFilePatterns": []
+    "managerFilePatterns": [
+      "/^kubernetes\\/.*\\.ya?ml$/"
+    ]
   },
   "flux": {
     "managerFilePatterns": [
-      "/(?:^|/)gotk-components\\.ya?ml$/"
+      "/^kubernetes\\/.*\\.ya?ml$/"
     ]
   },
   "helm-values": {
-    "commitMessageTopic": "helm values {{depName}}",
     "managerFilePatterns": [
-      "/(^|/)values\\.ya?ml$/"
-    ],
-    "pinDigests": false
+      "/^kubernetes\\/.*\\.ya?ml$/"
+    ]
   }
 }
