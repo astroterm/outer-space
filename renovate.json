@@ -8,5 +8,8 @@
   },
   "flux": {
     "enabled": true
+  },
+  "helm-values": {
+    "enabled": true
   }
 }
