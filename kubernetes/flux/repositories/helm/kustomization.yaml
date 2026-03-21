@@ -6,6 +6,7 @@ resources:
   - ./cilium.yaml
   - ./coredns.yaml
   - ./external-secrets.yaml
+  - ./grafana-community.yaml
   - ./grafana.yaml
   - ./itzg.yaml
   - ./jetstack.yaml
