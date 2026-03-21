@@ -32,6 +32,9 @@ loki:
 
   storage:
     type: filesystem
+  
+  limits_config:
+    volume_enabled: true
 
 gateway:
   enabled: false
