@@ -1,0 +1,87 @@
+crds:
+  enabled: true
+cleanPrometheusOperatorObjectNames: true
+
+kubelet:
+  enabled: true
+
+kubeApiServer:
+  enabled: true
+
+kubeControllerManager:
+  enabled: true
+
+kubeEtcd:
+  enabled: true
+
+kubeScheduler:
+  enabled: true
+
+kubeProxy:
+  enabled: false
+
+prometheusOperator:
+  admissionWebhooks:
+    deployment:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+    patch:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+
+prometheus:
+  prometheusSpec:
+    replicas: 2
+    ruleSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    probeSelectorNilUsesHelmValues: false
+    scrapeConfigSelectorNilUsesHelmValues: false
+    walCompression: true
+    retention: 14d
+    retentionSize: 70GB
+    resources:
+      requests:
+        cpu: 200m
+      limits:
+        memory: 2500Mi
+    tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: longhorn
+          resources:
+            requests:
+              storage: 75Gi
+
+nodeExporter:
+  enabled: true
+
+prometheus-node-exporter:
+  fullnameOverride: node-exporter
+  prometheus:
+    monitor:
+      enabled: true
+
+kubeStateMetrics:
+  enabled: true
+
+kube-state-metrics:
+  fullnameOverride: kube-state-metrics
+  metricLabelsAllowlist:
+    - pods=[*]
+    - deployments=[*]
+    - persistentvolumeclaims=[*]
+  prometheus:
+    monitor:
+      enabled: true
+
+grafana:
+  enabled: true
