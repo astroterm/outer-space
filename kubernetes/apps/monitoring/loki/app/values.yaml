@@ -33,5 +33,5 @@ loki:
   storage:
     type: filesystem
 
-  compactor:
-    working_directory: /var/loki/compactor
+gateway:
+  enabled: false
