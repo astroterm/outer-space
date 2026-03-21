@@ -53,3 +53,12 @@ loki.source.kubernetes_events "cluster_events" {
   log_format = "logfmt"
   forward_to = [loki.write.default.receiver]
 }
+
+loki.process "filter_canary" {
+  stage.match {
+    selector = "{pod=~\"loki-canary-.*\"}"
+    action   = "drop"
+  }
+
+  forward_to = [loki.write.default.receiver]
+}
