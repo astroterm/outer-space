@@ -3,6 +3,6 @@ serviceMonitor:
   enabled: true
 alloy:
   configMap:
-    create: true
+    create: false
     name: alloy-config
     key: config.alloy
