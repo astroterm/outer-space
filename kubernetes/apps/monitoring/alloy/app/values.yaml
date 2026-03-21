@@ -1,0 +1,8 @@
+fullnameOverride: alloy
+serviceMonitor:
+  enabled: true
+alloy:
+  configMap:
+    create: true
+    name: alloy-config
+    key: config.alloy
