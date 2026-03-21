@@ -38,6 +38,3 @@ loki:
 
 gateway:
   enabled: false
-
-lokiCanary:
-  enabled: false
