@@ -39,5 +39,5 @@ loki:
 gateway:
   enabled: false
 
-canary:
+lokiCanary:
   enabled: false
