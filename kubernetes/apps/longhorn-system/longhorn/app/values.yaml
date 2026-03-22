@@ -10,3 +10,7 @@ defaultSettings:
 defaultBackupStore:
   backupTarget: s3://outer-space@auto/
   backupTargetCredentialSecret: longhorn-backup
+
+metrics:
+  serviceMonitor:
+    enabled: true
