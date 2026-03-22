@@ -14,3 +14,11 @@ defaultBackupStore:
 metrics:
   serviceMonitor:
     enabled: true
+
+httproute:
+  enabled: true
+  parentRefs:
+    - name: web-gateway
+      namespace: networking
+  hostnames:
+    - longhorn.astxlab.dev
