@@ -3,19 +3,17 @@
   "extends": [
     "config:recommended"
   ],
-  "kubernetes": {
-    "managerFilePatterns": [
-      "/^kubernetes\\/.*\\.ya?ml$/"
-    ]
-  },
   "flux": {
     "managerFilePatterns": [
-      "/^kubernetes\\/.*\\.ya?ml$/"
+      "/^kubernetes\\/.*ks\\.ya?ml$/",
+      "/^kubernetes\\/.*helmrelease\\.ya?ml$/",
+      "/^kubernetes\\/flux\\/.*\\.ya?ml$/"
+
     ]
   },
   "helm-values": {
     "managerFilePatterns": [
-      "/^kubernetes\\/.*\\.ya?ml$/"
+      "/^kubernetes\\/.*values\\.ya?ml$/"
     ]
   }
 }
