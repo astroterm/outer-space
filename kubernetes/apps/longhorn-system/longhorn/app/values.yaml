@@ -24,8 +24,6 @@ httproute:
 
 persistence:
   dataEngine: v1
-
   recurringJobSelector:
-    enable: true
-    jobList: >-
-      [{"name":"daily-backup","isGroup":false}]
+    jobList: [{"name":"backup", "isGroup":false}]
+  
