@@ -1,7 +1,7 @@
 defaultSettings:
   v2DataEngine: true
 
-  defaultDataPath: /var/mnt/longhorn-v3/
+  defaultDataPath: /var/mnt/longhorn-v2/
 
   storageOverProvisioningPercentage: 200
   replicaSoftAntiAffinity: false
