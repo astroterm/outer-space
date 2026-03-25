@@ -10,3 +10,5 @@ spec:
   concurrency: 1
   labels:
     backup: daily
+  groups:
+    - backups
