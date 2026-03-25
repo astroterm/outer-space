@@ -27,5 +27,5 @@ persistence:
 
   recurringJobSelector:
     enable: true
-    jobList:
-      - name: daily-backup
+    jobList: >-
+      [{"name":"daily-backup","isGroup":false}]
