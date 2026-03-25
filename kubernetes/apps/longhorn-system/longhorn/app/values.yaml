@@ -1,4 +1,5 @@
 defaultSettings:
+  v2DataEngine: true
 
   defaultDataPath: /var/mnt/longhorn/
 
