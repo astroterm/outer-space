@@ -1,7 +1,7 @@
 defaultSettings:
   v2DataEngine: true
 
-  defaultDataPath: /host/dev/disk/by-partlabel/r-longhorn-v2
+  defaultDataPath: /host/dev/nvme0n1p5
 
   storageOverProvisioningPercentage: 200
   replicaSoftAntiAffinity: false
