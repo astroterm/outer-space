@@ -1,7 +1,6 @@
 defaultSettings:
-  v2DataEngine: true
 
-  defaultDataPath: /host/dev/nvme0n1p5
+  defaultDataPath: /var/mnt/longhorn
 
   storageOverProvisioningPercentage: 200
   replicaSoftAntiAffinity: false
@@ -24,7 +23,7 @@ httproute:
     - longhorn.astxlab.dev
 
 persistence:
-  dataEngine: v2
+  dataEngine: v1
 
   recurringJobSelector:
     enable: true
