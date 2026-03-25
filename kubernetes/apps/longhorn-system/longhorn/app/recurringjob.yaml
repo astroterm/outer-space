@@ -7,6 +7,5 @@ spec:
   cron: "0 12 * * *"
   task: backup 
   retain: 7
-  groups:
-    - default
+
 

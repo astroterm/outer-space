@@ -1,7 +1,6 @@
 defaultSettings:
 
   defaultDataPath: /var/mnt/longhorn/
-  defaultReplicaCount: 2
 
   storageOverProvisioningPercentage: 200
   replicaSoftAntiAffinity: false
@@ -22,3 +21,11 @@ httproute:
       namespace: networking
   hostnames:
     - longhorn.astxlab.dev
+
+persistence:
+  dataEngine: v2
+
+  recurringJobSelector:
+    enable: true
+    jobList:
+      - name: daily-backup
