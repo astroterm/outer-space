@@ -91,3 +91,11 @@ grafana:
       access: proxy
       url: http://loki.monitoring.svc.cluster.local:3100
       isDefault: false
+
+  grafana.ini:
+    auth:
+      disable_login_form: true
+
+    auth.anonymous:
+      enabled: true
+      org_role: Admin
