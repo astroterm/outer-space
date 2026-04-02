@@ -4,7 +4,7 @@ controllers:
       app:
         image:
           repository: docker.io/favonia/cloudflare-ddns
-          tag: 1.15.1
+          tag: 1.16.2
         env:
           TZ: Australia/Sydney
           IP6_PROVIDER: none
