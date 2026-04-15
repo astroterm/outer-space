@@ -50,13 +50,13 @@ persistence:
   storageClass: longhorn
   size: 100Gi
 
-metrics:
-  enabled: true
-  https: true
+# metrics:
+#   enabled: true
+#   https: true
 
-prometheus:
-  serviceMonitor:
-    enabled: true
+# prometheus:
+#   serviceMonitor:
+#     enabled: true
 
 phpClientHttpsFix:
   enabled: true
