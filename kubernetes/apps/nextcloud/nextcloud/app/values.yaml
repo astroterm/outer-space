@@ -49,6 +49,11 @@ mariadb:
   enabled: true
   auth:
     existingSecret: nextcloud-secret
+  primary:
+    persistence:
+      enabled: true
+      storageClass: longhorn
+      size: 20Gi
 
 externalDatabase:
   enabled: true
