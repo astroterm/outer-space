@@ -50,6 +50,11 @@ mariadb:
   auth:
     existingSecret: nextcloud-secret
 
+externalDatabase:
+  enabled: true
+
+internalDatabase:
+  enabled: false
 
 persistence:
   enabled: true
