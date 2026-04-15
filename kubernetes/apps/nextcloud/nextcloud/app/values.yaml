@@ -34,7 +34,7 @@ nextcloud:
         array (
           0 => 'localhost',
           1 => 'files.astxlab.dev',
-          2 => 'nextcloud.default.svc.cluster.local',
+          2 => 'nextcloud.nextcloud.svc.cluster.local',
         ),
       );
 
