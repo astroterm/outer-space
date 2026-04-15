@@ -23,3 +23,6 @@ metrics:
 prometheus:
   serviceMonitor:
     enabled: true
+
+phpClientHttpsFix:
+  enabled: true
