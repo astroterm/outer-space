@@ -3,6 +3,40 @@ nextcloud:
   existingSecret:
     enabled: true
     secretName: nextcloud-secret
+  configs:
+    overwrite.config.php: |-
+      <?php
+      $CONFIG = array (
+        'overwriteprotocol' => 'https',
+        'overwrite.cli.url' => 'https://files.astxlab.dev',
+        'overwritehost' => 'files.astxlab.dev',
+      );
+
+    proxies.config.php: |-
+      <?php
+      $CONFIG = array (
+        'trusted_proxies' =>
+        array (
+          0 => '127.0.0.1',
+          1 => '10.0.0.0/8',
+          2 => '192.168.0.0/16',
+        ),
+        'forwarded_for_headers' =>
+        array (
+          0 => 'HTTP_X_FORWARDED_FOR',
+        ),
+      );
+
+    domains.config.php: |-
+      <?php
+      $CONFIG = array (
+        'trusted_domains' =>
+        array (
+          0 => 'localhost',
+          1 => 'files.astxlab.dev',
+          2 => 'nextcloud.default.svc.cluster.local',
+        ),
+      );
 
 redis:
   enabled: true
