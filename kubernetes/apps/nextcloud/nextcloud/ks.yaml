@@ -5,14 +5,14 @@ metadata:
   name: &app nextcloud
   namespace: flux-system
 spec:
-  targetNamespace: &namespace default
+  targetNamespace: &namespace nextcloud
 
   interval: 1h
   retryInterval: 5m
   timeout: 10m
   prune: true
 
-  path: ./kubernetes/apps/default/nextcloud/app
+  path: ./kubernetes/apps/nextcloud/nextcloud/app
 
   sourceRef:
     kind: GitRepository
