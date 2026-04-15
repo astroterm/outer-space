@@ -1,11 +1,3 @@
-httproute:
-  enabled: true
-  parentRefs:
-    - name: web-gateway
-      namespace: networking
-  hostnames:
-    - files.astxlab.dev
-
 nextcloud:
   host: files.astxlab.dev
   existingSecret:
