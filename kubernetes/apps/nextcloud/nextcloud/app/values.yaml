@@ -45,10 +45,19 @@ redis:
     existingSecret: nextcloud-secret
     existingSecretPasswordKey: redis-password
 
+mariadb:
+  enabled: true
+  auth:
+    existingSecret: nextcloud-secret
+
+
 persistence:
   enabled: true
   storageClass: longhorn
   size: 100Gi
+
+phpClientHttpsFix:
+  enabled: true
 
 # metrics:
 #   enabled: true
@@ -57,6 +66,3 @@ persistence:
 # prometheus:
 #   serviceMonitor:
 #     enabled: true
-
-phpClientHttpsFix:
-  enabled: true
