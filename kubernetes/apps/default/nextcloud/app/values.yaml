@@ -1,0 +1,33 @@
+httproute:
+  enabled: true
+  parentRefs:
+    - name: web-gateway
+      namespace: networking
+  hostnames:
+    - files.astxlab.dev
+
+nextcloud:
+  host: files.astxlab.dev
+  existingSecret:
+    enabled: true
+    secretName: nextcloud-secret
+
+redis:
+  enabled: true
+  auth:
+    enabled: true
+    existingSecret: nextcloud-secret
+    existingSecretPasswordKey: redis
+
+persistence:
+  enabled: true
+  storageClass: longhorn
+  size: 100Gi
+
+metrics:
+  enabled: true
+  https: true
+
+prometheus:
+  serviceMonitor:
+    enabled: true
