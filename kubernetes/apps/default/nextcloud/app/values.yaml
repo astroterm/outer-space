@@ -17,7 +17,7 @@ redis:
   auth:
     enabled: true
     existingSecret: nextcloud-secret
-    existingSecretPasswordKey: redis
+    existingSecretPasswordKey: redis-password
 
 persistence:
   enabled: true
