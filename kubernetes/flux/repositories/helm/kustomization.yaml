@@ -12,6 +12,7 @@ resources:
   - ./jetstack.yaml
   - ./longhorn.yaml
   - ./metrics-server.yaml
+  - ./nextcloud.yaml
   - ./openebs.yaml
   - ./prometheus-community.yaml
   - ./tailscale.yaml
