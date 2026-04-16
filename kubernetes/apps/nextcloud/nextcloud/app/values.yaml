@@ -60,6 +60,7 @@ externalDatabase:
   host: nextcloud-mariadb
   existingSecret:
     enabled: true
+    secretName: nextcloud-secret
     usernameKey: mariadb-username
     passwordKey: mariadb-password
 
