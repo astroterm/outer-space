@@ -1,0 +1,37 @@
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: docker.io/sissbruecker/linkding
+
+        env:
+          
+
+        resources:
+          requests:
+            cpu: 15m
+            memory: 250Mi
+          limits:
+            memory: 250Mi
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 9090
+
+persistence:
+  config:
+    storageClass: longhorn
+    size: 5Gi
+    globalMounts:
+      - path: /etc/linkding/data/
+
+route:
+  app:
+    hostnames:
+      - "links.astxlab.dev"
+    parentRefs:
+      - name: web-gateway
+        namespace: networking
