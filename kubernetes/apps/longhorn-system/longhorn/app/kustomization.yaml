@@ -5,6 +5,7 @@ resources:
   - ./helmrelease.yaml
   - ./externalsecret.yaml
   - ./recurringjob.yaml
+  - ./longhorn-local.yaml
 configMapGenerator:
   - name: longhorn-values
     files:
