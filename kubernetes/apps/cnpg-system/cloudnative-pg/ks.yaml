@@ -49,3 +49,6 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  
+  dependsOn:
+    - name: cloudnative-pg
