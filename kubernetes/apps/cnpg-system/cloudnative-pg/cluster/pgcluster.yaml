@@ -19,6 +19,14 @@ spec:
       max_slot_wal_keep_size: 1GB
       shared_buffers: 64MB
 
+  managed:
+    roles:
+    - name: nextcloud
+      comment: Database for Nextcloud
+      login: true
+      passwordSecret:
+        name: nextcloud-db
+
   resources:
     requests:
       memory: "128Mi"

@@ -4,6 +4,6 @@ metadata:
   name: nextcloud-postgres
 spec:
   name: nextcloud
-  owner: app
+  owner: nextcloud
   cluster:
     name: postgres
