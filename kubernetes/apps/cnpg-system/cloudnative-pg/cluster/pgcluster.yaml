@@ -1,0 +1,32 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres
+spec:
+  instances: 3
+  enableSuperuserAccess: true
+
+  storage:
+    size: 100Gi
+    storageClass: longhorn-local
+  
+  superuserSecret:
+    name: cnpg-secret
+
+  postgresql:
+    parameters:
+      max_connections: "100"
+      max_slot_wal_keep_size: 1GB
+      shared_buffers: 64MB
+
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "50m"
+    limits:
+      memory: "1Gi"
+
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
