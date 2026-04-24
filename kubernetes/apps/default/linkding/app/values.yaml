@@ -39,10 +39,12 @@ service:
 
 persistence:
   config:
-    storageClass: longhorn
+    type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
     size: 5Gi
+    storageClass: longhorn
     globalMounts:
-      - path: /etc/linkding/data/
+      - path: /etc/linkding/data
 
 route:
   app:
