@@ -53,6 +53,8 @@ externalDatabase:
   existingSecret:
     enabled: true
     secretName: nextcloud-db
+    usernameKey: username
+    passwordKey: password
 
 internalDatabase:
   enabled: false
