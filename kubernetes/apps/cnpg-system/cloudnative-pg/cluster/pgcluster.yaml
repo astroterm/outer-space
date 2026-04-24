@@ -26,6 +26,12 @@ spec:
       login: true
       passwordSecret:
         name: nextcloud-db
+    
+    - name: linkding
+      comment: Database for Linkding
+      login: true
+      passwordSecret:
+        name: linkding-db
 
   resources:
     requests:
