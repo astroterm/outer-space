@@ -20,6 +20,7 @@ controllers:
         
         securityContext:
           allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
           capabilities: { drop: ["ALL"] }
 
         resources:
@@ -44,7 +45,11 @@ persistence:
     storageClass: longhorn
     globalMounts:
       - path: /etc/linkding/data
-
+  tmpfs:
+    type: emptyDir
+    sizeLimit: 128Mi
+    globalMounts:
+      - path: /tmp
 route:
   app:
     hostnames:
