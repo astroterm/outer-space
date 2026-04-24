@@ -20,7 +20,6 @@ controllers:
         
         securityContext:
           allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
           capabilities: { drop: ["ALL"] }
 
         resources:
