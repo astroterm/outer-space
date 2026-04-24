@@ -4,7 +4,7 @@ controllers:
       main:
         image:
           repository: docker.io/sissbruecker/linkding
-
+          tag: 1.45.0
         env:
           LD_DB_DATABASE: linkding
           LD_DB_USER: linkding
