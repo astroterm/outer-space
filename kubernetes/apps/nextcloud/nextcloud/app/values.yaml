@@ -45,24 +45,14 @@ redis:
     existingSecret: nextcloud-secret
     existingSecretPasswordKey: redis-password
 
-mariadb:
-  enabled: true
-  auth:
-    existingSecret: nextcloud-secret
-  primary:
-    persistence:
-      enabled: true
-      storageClass: longhorn
-      size: 20Gi
-
 externalDatabase:
   enabled: true
-  host: nextcloud-mariadb
+  database: nextcloud
+  type: postgresql
+  host: postgres-rw.cnpg-system.svc.cluster.local
   existingSecret:
     enabled: true
-    secretName: nextcloud-secret
-    usernameKey: mariadb-username
-    passwordKey: mariadb-password
+    secretName: nextcloud-db
 
 internalDatabase:
   enabled: false
