@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/itzg/minecraft-server-charts/master/charts/minecraft/values.schema.json
+fullnameOverride: chalice-mc
+minecraftServer:
+  eula: TRUE
+  type: QUILT
+  memory: 4096M
+  modrinth:
+    projects:
+      - lithium
+      - fabric-api
+      - ferrite-core
+  extraEnv:
+    - name: TZ
+      value: "Australia/Sydney"
+  envFrom:
+    - secretRef:
+        name: chalicemc-secret
+
+  difficulty: easy
+
+persistence:
+  dataDir:
+    enabled: true
+    size: 20Gi # pick what you need
+    accessModes: ["ReadWriteOnce"]
+
+serviceAnnotations:
+  mc-router.itzg.me/externalServerName: "chalicemc.astx.dev"
+
+initContainers: []
+sidecarContainers: []
