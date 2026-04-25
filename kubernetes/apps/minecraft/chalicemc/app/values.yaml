@@ -16,6 +16,7 @@ minecraftServer:
     - secretRef:
         name: chalicemc-secret
 
+  version: 1.21.11
   difficulty: easy
 
 persistence:
