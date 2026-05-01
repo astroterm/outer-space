@@ -9,15 +9,17 @@ minecraftServer:
       - lithium
       - fabric-api
       - ferrite-core
-  extraEnv:
-    - name: TZ
-      value: "Australia/Sydney"
-  envFrom:
-    - secretRef:
-        name: chalicemc-secret
+
 
   version: 1.21.11
   difficulty: easy
+
+extraEnv:
+  - name: TZ
+    value: "Australia/Sydney"
+envFrom:
+  - secretRef:
+      name: chalicemc-secret
 
 persistence:
   dataDir:
