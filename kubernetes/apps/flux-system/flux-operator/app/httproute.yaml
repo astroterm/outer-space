@@ -7,6 +7,7 @@ spec:
   parentRefs:
   - name: web-gateway
     namespace: networking
+    sectionName: astxlab-dev
   hostnames:
   - flux.astxlab.dev
   rules:
@@ -17,4 +18,3 @@ spec:
     backendRefs:
     - name: flux-operator
       port: 9080
-      sectionName: astxlab-dev
