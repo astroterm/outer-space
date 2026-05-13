@@ -3,6 +3,7 @@ serviceMonitor:
   create: true
 
 web:
+  enabled: true
   httpRoute:
     enabled: true
     hostnames:
