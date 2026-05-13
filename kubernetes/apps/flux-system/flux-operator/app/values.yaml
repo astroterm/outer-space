@@ -4,10 +4,10 @@ serviceMonitor:
 
 web:
   enabled: true
-  # httpRoute:
-  #   enabled: true
-  #   hostnames:
-  #     - flux.astxlab.dev
-  #   parentRefs:
-  #   - name: web-gateway
-  #     namespace: networking
+  httpRoute:
+    enabled: true
+    hostnames:
+      - flux.astxlab.dev
+    parentRefs:
+    - name: web-gateway
+      namespace: networking
