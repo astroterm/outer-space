@@ -21,6 +21,7 @@ ipv4:
 l2announcements:
   enabled: true
 bpf:
+  masquerade: true
   hostLegacyRouting: false
 
 hubble:
