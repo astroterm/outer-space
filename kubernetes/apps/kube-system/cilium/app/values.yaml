@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/cilium/cilium/refs/tags/v1.19.4/install/kubernetes/cilium/values.schema.json
 ---
-ipv4NativeRoutingCIDR: 10.244.0.0/16
-autoDirectNodeRoutes: true
+autoDirectNodeRoutes: false
 routingMode: tunnel
 tunnelProtocol: vxlan
 
