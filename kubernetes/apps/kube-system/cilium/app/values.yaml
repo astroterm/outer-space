@@ -16,12 +16,12 @@ gatewayAPI:
   enabled: true
   gatewayClass:
     create: 'true'
-envoy:
-  connectTimeoutSeconds: 10
 ipv4:
   enabled: true
 l2announcements:
   enabled: true
+bpf:
+  hostLegacyRouting: false
 
 hubble:
   enabled: true
