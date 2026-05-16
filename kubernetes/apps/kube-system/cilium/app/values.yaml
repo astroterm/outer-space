@@ -6,6 +6,7 @@ tunnelProtocol: vxlan
 
 rollOutCiliumPods: true
 kubeProxyReplacement: true
+devices: enp1s0
 
 k8sServiceHost: localhost
 k8sServicePort: 7445
@@ -23,6 +24,7 @@ l2announcements:
 bpf:
   masquerade: true
   hostLegacyRouting: false
+
 
 hubble:
   enabled: true
