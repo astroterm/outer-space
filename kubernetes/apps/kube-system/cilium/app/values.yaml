@@ -1,3 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/cilium/cilium/refs/tags/v1.19.4/install/kubernetes/cilium/values.schema.json
+
+apiVersion: v1
+kind: Pod
+...
 ---
 ipv4NativeRoutingCIDR: 10.244.0.0/16
 autoDirectNodeRoutes: true
@@ -15,6 +20,8 @@ gatewayAPI:
   enabled: true
   gatewayClass:
     create: 'true'
+envoy:
+  connectTimeoutSeconds: 10
 ipv4:
   enabled: true
 l2announcements:
