@@ -1,0 +1,5 @@
+- op: add
+  path: /spec/layerSelector
+  value:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
