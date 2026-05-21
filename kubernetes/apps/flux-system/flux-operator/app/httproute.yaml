@@ -7,7 +7,6 @@ spec:
   parentRefs:
   - name: web-gateway
     namespace: networking
-    sectionName: astxlab-dev
   hostnames:
   - flux.astxlab.dev
   rules:
