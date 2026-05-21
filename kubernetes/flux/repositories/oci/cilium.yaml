@@ -1,9 +1,11 @@
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
+kind: OCIRepository
 metadata:
   name: cilium
   namespace: flux-system
 spec:
   interval: 3h
-  url: https://helm.cilium.io
+  url: oci://quay.io/cilium/charts/cilium
+  ref:
+    tag: 1.19.4

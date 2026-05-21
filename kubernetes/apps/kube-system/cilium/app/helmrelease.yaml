@@ -6,14 +6,10 @@ metadata:
   namespace: kube-system
 spec:
   interval: 1h
-  chart:
-    spec:
-      chart: cilium
-      version: 1.19.4
-      sourceRef:
-        kind: HelmRepository
-        name: cilium
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: cilium
+    namespace: flux-system
   valuesFrom:
     - name: cilium-values
       kind: ConfigMap
