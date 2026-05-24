@@ -6,6 +6,7 @@ resources:
   - ./cert-manager.yaml
   - ./cilium.yaml
   - ./cloudnative-pg.yaml
+  - ./coredns.yaml
   - ./flux-operator.yaml
 components:
   - ../../../components/helm-oci
