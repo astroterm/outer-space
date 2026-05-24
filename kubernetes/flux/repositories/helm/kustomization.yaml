@@ -6,6 +6,5 @@ resources:
   - ./grafana-community.yaml
   - ./grafana.yaml
   - ./itzg.yaml
-  - ./longhorn.yaml
   - ./prometheus-community.yaml
   - ./tailscale.yaml
