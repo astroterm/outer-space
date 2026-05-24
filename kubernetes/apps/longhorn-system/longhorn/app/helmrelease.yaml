@@ -5,14 +5,10 @@ metadata:
   name: longhorn
 spec:
   interval: 1h
-  chart:
-    spec:
-      chart: longhorn
-      version: 1.11.2
-      sourceRef:
-        kind: HelmRepository
-        name: longhorn
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: longhorn
+    namespace: flux-system
   valuesFrom:
     - kind: ConfigMap
       name: longhorn-values
