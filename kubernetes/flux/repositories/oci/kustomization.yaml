@@ -12,5 +12,6 @@ resources:
   - ./grafana-loki.yaml
   - ./longhorn.yaml
   - ./metrics-server.yaml
+  - ./prometheus-stack.yaml
 components:
   - ../../../components/helm-oci
