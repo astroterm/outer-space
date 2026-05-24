@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: metrics-server
+spec:
+  url: oci://ghcr.io/home-operations/charts-mirror/metrics-server
+  ref:
+    tag: 3.13.0
