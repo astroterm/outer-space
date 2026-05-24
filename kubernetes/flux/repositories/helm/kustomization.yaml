@@ -7,6 +7,5 @@ resources:
   - ./grafana.yaml
   - ./itzg.yaml
   - ./longhorn.yaml
-  - ./metrics-server.yaml
   - ./prometheus-community.yaml
   - ./tailscale.yaml
