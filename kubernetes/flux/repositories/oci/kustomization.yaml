@@ -8,6 +8,8 @@ resources:
   - ./cloudnative-pg.yaml
   - ./coredns.yaml
   - ./flux-operator.yaml
+  - ./grafana-alloy.yaml
+  - ./grafana-loki.yaml
   - ./longhorn.yaml
   - ./metrics-server.yaml
 components:

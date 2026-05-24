@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: loki
+spec:
+  url: oci://ghcr.io/grafana-community/helm-charts/loki
+  ref:
+    tag: 16.1.0
