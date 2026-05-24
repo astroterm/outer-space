@@ -7,6 +7,7 @@ resources:
   - ./cilium.yaml
   - ./cloudnative-pg.yaml
   - ./coredns.yaml
+  - ./external-secrets.yaml
   - ./flux-operator.yaml
   - ./grafana-alloy.yaml
   - ./grafana-loki.yaml
