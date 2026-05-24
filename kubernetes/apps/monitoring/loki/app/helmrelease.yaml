@@ -5,7 +5,6 @@ metadata:
   name: loki
 spec:
   interval: 1h
-  timeout: 10m
   chartRef:
     kind: OCIRepository
     name: loki

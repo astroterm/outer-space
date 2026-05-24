@@ -5,7 +5,6 @@ metadata:
   name: alloy
 spec:
   interval: 1h
-  timeout: 10m
   chart:
     spec:
       chart: alloy
