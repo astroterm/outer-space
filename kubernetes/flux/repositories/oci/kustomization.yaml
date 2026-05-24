@@ -8,6 +8,7 @@ resources:
   - ./cloudnative-pg.yaml
   - ./coredns.yaml
   - ./flux-operator.yaml
+  - ./longhorn.yaml
   - ./metrics-server.yaml
 components:
   - ../../../components/helm-oci
