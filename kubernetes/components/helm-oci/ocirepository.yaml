@@ -1,10 +1,9 @@
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: OCIRepository
-metadata:
-  namespace: flux-system
-spec:
-  interval: 3h
-  layerSelector:
+
+- op: add
+  path: /spec/interval
+  value: 3h
+- op: add
+  path: /spec/layerSelector
+  value:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
