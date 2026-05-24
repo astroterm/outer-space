@@ -5,15 +5,10 @@ metadata:
   name: prometheus-stack
 spec:
   interval: 1h
-  timeout: 10m
-  chart:
-    spec:
-      chart: kube-prometheus-stack
-      version: 85.2.0
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus-community
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: prometheus-stack
+    namespace: flux-system
   dependsOn:
     - name: longhorn
       namespace: longhorn-system

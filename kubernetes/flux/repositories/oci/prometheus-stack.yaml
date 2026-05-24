@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: prometheus-stack
+spec:
+  url: oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack
+  ref:
+    tag: 85.2.0
