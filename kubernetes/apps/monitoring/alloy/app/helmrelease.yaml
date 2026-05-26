@@ -5,14 +5,10 @@ metadata:
   name: alloy
 spec:
   interval: 1h
-  chart:
-    spec:
-      chart: alloy
-      version: 1.8.1
-      sourceRef:
-        kind: HelmRepository
-        name: grafana
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: alloy
+    namespace: flux-system
   valuesFrom:
     - name: alloy-values
       kind: ConfigMap
