@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack
   ref:
-    tag: 85.2.0
+    tag: 85.3.3
