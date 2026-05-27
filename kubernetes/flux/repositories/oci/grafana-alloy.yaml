@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/home-operations/charts-mirror/alloy
   ref:
-    tag: 1.8.1
+    tag: 1.8.2
