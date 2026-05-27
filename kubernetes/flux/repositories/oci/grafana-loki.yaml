@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/grafana-community/helm-charts/loki
   ref:
-    tag: 16.1.0
+    tag: 17.1.1
