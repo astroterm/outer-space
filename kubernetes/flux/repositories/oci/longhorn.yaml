@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/home-operations/charts-mirror/longhorn
   ref:
-    tag: 1.11.2
+    tag: 1.12.0
