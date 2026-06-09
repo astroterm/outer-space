@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/coredns/charts/coredns
   ref:
-    tag: 1.45.2
+    tag: 1.46.0
