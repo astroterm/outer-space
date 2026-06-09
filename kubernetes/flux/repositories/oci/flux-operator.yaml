@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator
   ref:
-    tag: 0.50.0
+    tag: 0.51.0
