@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/home-operations/charts-mirror/metrics-server
   ref:
-    tag: 3.13.0
+    tag: 3.13.1
