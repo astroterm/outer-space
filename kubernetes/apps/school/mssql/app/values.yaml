@@ -1,0 +1,42 @@
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: mcr.microsoft.com/mssql/server
+          tag: 2025-latest
+        env:
+          ACCEPT_EULA: Y
+          MSSQL_PID: Express
+          
+        envFrom:
+        - secretRef:
+            name: mssql-secret
+        
+        securityContext:
+          allowPrivilegeEscalation: false
+          # readOnlyRootFilesystem: true
+          # capabilities: { drop: ["ALL"] }
+
+        resources:
+          requests:
+            cpu: 500m
+            memory: 4Gi
+          limits:
+            memory: 4Gi
+
+service:
+  main:
+    controller: main
+    ports:
+      tcp:
+        port: 1433
+
+persistence:
+  data:
+    type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
+    size: 5Gi
+    storageClass: longhorn
+    globalMounts:
+      - path: /var/opt/mssql
