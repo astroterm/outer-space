@@ -24,7 +24,10 @@ controllers:
             memory: 4Gi
           limits:
             memory: 4Gi
-
+    pod:
+      securityContext:
+        fsGroup: 10001
+        fsGroupChangePolicy: OnRootMismatch
 service:
   main:
     controller: main
