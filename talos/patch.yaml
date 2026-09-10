@@ -1,0 +1,96 @@
+machine:
+  certSANs:
+    - 192.168.2.3
+    - 192.168.2.4
+    - 192.168.2.5
+
+  features:
+    diskQuotaSupport: true
+
+  kernel:
+    modules:
+      - name: rbd
+
+
+---
+apiVersion: v1alpha1
+kind: KubeletConfig
+
+defaultRuntimeSeccompProfileEnabled: true
+
+---
+apiVersion: v1alpha1
+kind: ResolverConfig
+
+hostDNS:
+  enabled: true
+  forwardKubeDNSToHost: true
+
+---
+apiVersion: v1alpha1
+kind: KubePrismConfig
+
+port: 7445
+
+---
+apiVersion: v1alpha1
+kind: KubeNetworkConfig
+
+dnsDomain: cluster.local
+
+podSubnets:
+  - 10.244.0.0/16
+
+serviceSubnets:
+  - 10.96.0.0/12
+
+---
+apiVersion: v1alpha1
+kind: KubeNodeConfig
+
+taints:
+  $patch: delete
+
+---
+apiVersion: v1alpha1
+kind: KubeProxyConfig
+
+enabled: false
+
+---
+apiVersion: v1alpha1
+kind: KubeCoreDNSConfig
+
+enabled: false
+
+---
+apiVersion: v1alpha1
+kind: KubeAuditPolicyConfig
+
+configuration:
+  apiVersion: audit.k8s.io/v1
+  kind: Policy
+  rules:
+    - level: Metadata
+
+---
+apiVersion: v1alpha1
+kind: KubeFlannelCNIConfig
+
+$patch: delete
+
+---
+apiVersion: v1alpha1
+kind: VolumeConfig
+name: EPHEMERAL
+
+provisioning:
+  diskSelector:
+    match: system_disk
+  minSize: 300GiB
+  maxSize: 300GiB
+
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+auto: stable
