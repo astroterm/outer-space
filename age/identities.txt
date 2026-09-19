@@ -1,0 +1,16 @@
+#       Serial: 34386494, Slot: 1
+#         Name: age-milky-way
+#      Created: Sat, 19 Sep 2026 06:46:14 +0000
+#   PIN policy: Once   (A PIN is required once per session, if set)
+# Touch policy: Always (A physical touch is required for every decryption)
+#    Recipient: age1yubikey1q2y8txrc0l6f5qsvx4p94z42jrchddft5ad74py6xwwt4m36g5wxvwm4xjm
+AGE-PLUGIN-YUBIKEY-186EQCQ5ZEGJ88WCH62TGY
+
+
+#       Serial: 34386464, Slot: 1
+#         Name: age-phoenix
+#      Created: Sat, 19 Sep 2026 06:48:51 +0000
+#   PIN policy: Once   (A PIN is required once per session, if set)
+# Touch policy: Always (A physical touch is required for every decryption)
+#    Recipient: age1yubikey1q25sl9w7nck0lfsqm4qgfgt7pfyr2uz86vzlevl7spn8y24l27yfugxu9e8
+AGE-PLUGIN-YUBIKEY-1YZEQCQ5ZG80Z0HCTSYENL

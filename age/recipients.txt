@@ -1,0 +1,11 @@
+# Secure Enclave
+age1se1qwluercwnz0l998tjcg9leg5djqgdph78958ncfj8s3x5nuqpk8lcueq3j9
+
+# Milky Way
+age1yubikey1q2y8txrc0l6f5qsvx4p94z42jrchddft5ad74py6xwwt4m36g5wxvwm4xjm
+
+# Phoenix
+age1yubikey1q25sl9w7nck0lfsqm4qgfgt7pfyr2uz86vzlevl7spn8y24l27yfugxu9e8
+
+# SSH ed25519
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLH+UtltfOE1U3xIm4+2zADRqyzvDFDBurKwXrNx9b6 hdo
