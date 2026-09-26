@@ -69,3 +69,15 @@ apply:
 encrypt:
     age -R age/recipients.txt -o talos/secrets.age ~/.talos/secrets.yaml
 
+bootstrap:
+    #!/usr/bin/env nu
+    (helm install cilium
+        oci://quay.io/cilium/charts/cilium 1.20.2 -n kube-system
+        -f kubernetes/infra/kube-system/cilium/app/values.yaml
+    )
+
+    (helm install flux-operator
+        oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator
+        --namespace flux-system --create-namespace
+        -f kubernetes/infra/flux-system/flux-operator/app/values.yaml
+    )

@@ -1,6 +1,6 @@
 ---
-serviceMonitor:
-  create: true
+# serviceMonitor:
+#   create: true
 
 web:
   enabled: true
