@@ -35,8 +35,8 @@ shutdown target=nodes:
 apply:
     #!/usr/bin/env nu
     (age -d
-        -i ~/.age/age-se
         -i ~/.ssh/id_ed25519
+        -i ~/.age/age-se
         -i age/identities.txt
         talos/secrets.age
     ) | to text | tee {
