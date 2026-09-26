@@ -92,3 +92,13 @@ provisioning:
     match: system_disk
   minSize: 300GiB
   maxSize: 300GiB
+
+---
+apiVersion: v1alpha1
+kind: RawVolumeConfig
+name: ceph
+provisioning:
+  diskSelector:
+    match: disk.transport == "nvme"
+  minSize: 1280GiB
+  maxSize: 1280GiB
