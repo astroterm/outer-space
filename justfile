@@ -69,15 +69,37 @@ apply:
 encrypt:
     age -R age/recipients.txt -o talos/secrets.age ~/.talos/secrets.yaml
 
-bootstrap:
+
+gatewayCRDs:
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gatewayclasses.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gateways.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_httproutes.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_referencegrants.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_grpcroutes.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_backendtlspolicies.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_tlsroutes.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_listenersets.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_tcproutes.yaml
+    kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_udproutes.yaml
+bootstrap: gatewayCRDs
     #!/usr/bin/env nu
     (helm install cilium
-        oci://quay.io/cilium/charts/cilium 1.20.2 -n kube-system
+        oci://quay.io/cilium/charts/cilium -n kube-system
         -f kubernetes/infra/kube-system/cilium/app/values.yaml
+    )
+
+    (helm install coredns
+        oci://ghcr.io/coredns/charts/coredns -n kube-system
+        -f kubernetes/infra/kube-system/coredns/app/values.yaml
     )
 
     (helm install flux-operator
         oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator
         --namespace flux-system --create-namespace
         -f kubernetes/infra/flux-system/flux-operator/app/values.yaml
+    )
+
+    (flux create secret git flux-system
+        --url=ssh://git@github.com/astroterm/outer-space.git
+        --ssh-key-algorithm=ecdsa --ssh-ecdsa-curve=p521
     )

@@ -18,6 +18,9 @@ kind: KubeletConfig
 
 defaultRuntimeSeccompProfileEnabled: true
 
+config:
+  serverTLSBootstrap: true
+
 ---
 apiVersion: v1alpha1
 kind: ResolverConfig
