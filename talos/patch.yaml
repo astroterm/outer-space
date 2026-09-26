@@ -24,7 +24,7 @@ kind: ResolverConfig
 
 hostDNS:
   enabled: true
-  forwardKubeDNSToHost: true
+  forwardKubeDNSToHost: false
 
 ---
 apiVersion: v1alpha1
@@ -89,8 +89,3 @@ provisioning:
     match: system_disk
   minSize: 300GiB
   maxSize: 300GiB
-
----
-apiVersion: v1alpha1
-kind: HostnameConfig
-auto: stable
