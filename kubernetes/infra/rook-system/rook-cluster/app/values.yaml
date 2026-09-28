@@ -5,6 +5,18 @@ cephClusterSpec:
     useAllNodes: true
     useAllDevices: false
     devicePathFilter: ^/dev/disk/by-partlabel/r-ceph$
+    wipeDevicesFromOtherClusters: true
+  security:
+    cephx:
+      allowedCiphers: [aes256k]
+      daemon:
+        keyRotationPolicy: KeyGeneration
+        keyGeneration: 2
+      csi:
+        keyRotationPolicy: KeyGeneration
+        keyGeneration: 2
+        keepPriorKeyCountMax: 0
+        keyType: aes256k
 
 toolbox:
   enabled: true
