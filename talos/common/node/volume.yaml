@@ -1,7 +1,7 @@
 ---
 apiVersion: v1alpha1
 kind: RawVolumeConfig
-name: ceph
+name: osd
 provisioning:
   diskSelector:
     match: disk.transport == "nvme"
