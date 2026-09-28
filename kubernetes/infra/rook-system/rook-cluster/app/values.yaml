@@ -5,3 +5,6 @@ cephClusterSpec:
     useAllNodes: true
     useAllDevices: false
     devicePathFilter: /dev/disk/by-partlabel/r-ceph
+
+toolbox:
+  enabled: true
