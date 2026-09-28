@@ -34,6 +34,11 @@ shutdown target=nodes:
 #     | talosctl apply-config -n {{target}} --file /dev/stdin
 apply:
     #!/usr/bin/env nu
+    let patches = (
+        glob "talos/common/**/*.yaml"
+        | each {|p| ["--config-patch", $"@($p)"] }
+        | flatten
+    )
     (age -d
         -i ~/.ssh/id_ed25519
         -i ~/.age/age-se
@@ -44,7 +49,7 @@ apply:
             --with-secrets /dev/stdin
             --install-disk /dev/nvme0n1
             --install-image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}}
-            --config-patch @talos/patch.yaml
+            ...$patches
             --config-patch @talos/192-168-2-3.yaml
             --output-types controlplane --output -
         ) | talosctl apply-config -n 192.168.2.3 --file /dev/stdin
@@ -53,7 +58,7 @@ apply:
             --with-secrets /dev/stdin
             --install-disk /dev/nvme0n1
             --install-image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}}
-            --config-patch @talos/patch.yaml
+            ...$patches
             --config-patch @talos/192-168-2-4.yaml
             --output-types controlplane --output -
         ) | talosctl apply-config -n 192.168.2.4 --file /dev/stdin
@@ -61,7 +66,7 @@ apply:
             --with-secrets /dev/stdin
             --install-disk /dev/nvme0n1
             --install-image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}}
-            --config-patch @talos/patch.yaml
+            ...$patches
             --config-patch @talos/192-168-2-5.yaml
             --output-types controlplane --output -
     ) | talosctl apply-config -n 192.168.2.5 --file /dev/stdin
