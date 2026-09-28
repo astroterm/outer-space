@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: rook-cluster
+spec:
+  url: oci://ghcr.io/rook/rook-ceph-cluster
+  ref:
+    tag: 1.20.7

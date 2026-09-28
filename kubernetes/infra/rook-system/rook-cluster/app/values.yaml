@@ -1,0 +1,7 @@
+operatorNamespace: rook-system
+
+cephClusterSpec:
+  storage:
+    useAllNodes: true
+    useAllDevices: false
+    devicePathFilter: /dev/disk/by-partlabel/r-ceph

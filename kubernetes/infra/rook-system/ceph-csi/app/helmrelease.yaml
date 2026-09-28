@@ -1,0 +1,14 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ceph-csi
+spec:
+  interval: 1h
+  chartRef:
+    kind: OCIRepository
+    name: ceph-csi
+    namespace: flux-system
+  valuesFrom:
+    - kind: ConfigMap
+      name: ceph-csi-values

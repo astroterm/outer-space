@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: rook-ceph
+spec:
+  url: oci://ghcr.io/rook/rook-ceph
+  ref:
+    tag: 1.20.7
