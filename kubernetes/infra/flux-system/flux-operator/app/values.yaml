@@ -9,5 +9,5 @@ web:
     hostnames:
       - flux.astxlab.dev
     parentRefs:
-    - name: web-gateway
+    - name: cilium-internal
       namespace: networking
