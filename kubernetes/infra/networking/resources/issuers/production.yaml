@@ -12,11 +12,8 @@ spec:
           cloudflare:
             apiTokenSecretRef:
               name: cloudflare-secret
-              key: ZONE_API_TOKEN
+              key: CLOUDFLARE_API_TOKEN
         selector:
           dnsZones:
-            - "astro1.dev"
-            - "astroterm.dev"
-            - "astroterm.org"
-            - "astx.dev"
-            - "astxlab.dev"
+            - "astrolab.systems"
+            - "outer-space.io"
