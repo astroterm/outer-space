@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./externalsecret.yaml
-  # - ./cert-manager/ks.yaml
-  # - ./cloudflare-ddns/ks.yaml
-  # - ./resources/ks.yaml
+  - ./cert-manager/ks.yaml
+  - ./cloudflare-ddns/ks.yaml
+  - ./resources/ks.yaml
