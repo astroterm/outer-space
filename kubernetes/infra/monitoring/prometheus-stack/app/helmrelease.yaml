@@ -10,8 +10,8 @@ spec:
     name: prometheus-stack
     namespace: flux-system
   dependsOn:
-    - name: longhorn
-      namespace: longhorn-system
+    - name: rook-cluster
+      namespace: rook-system
   valuesFrom:
     - name: prometheus-values
       kind: ConfigMap

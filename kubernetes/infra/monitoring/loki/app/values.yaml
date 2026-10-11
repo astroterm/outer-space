@@ -4,7 +4,7 @@ singleBinary:
   replicas: 1
   persistence:
     enabled: true
-    storageClass: longhorn
+    storageClass: ceph-block
     size: 50Gi
 
 read:

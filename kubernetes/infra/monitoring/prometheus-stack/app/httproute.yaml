@@ -5,10 +5,10 @@ metadata:
   name: grafana
 spec:
   parentRefs:
-  - name: web-gateway
+  - name: cilium-internal
     namespace: networking
   hostnames:
-  - grafana.astxlab.dev
+  - cilium.astrolab.systems
   rules:
   - matches:
     - path:
