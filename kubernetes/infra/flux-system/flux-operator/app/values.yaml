@@ -7,7 +7,7 @@ web:
   httpRoute:
     enabled: true
     hostnames:
-      - flux.astxlab.dev
+      - flux.astrolab.systems
     parentRefs:
     - name: cilium-internal
       namespace: networking
