@@ -17,5 +17,6 @@ resources:
   - ./prometheus-stack.yaml
   - ./rook-ceph.yaml
   - ./rook-cluster.yaml
+  - ./tailscale.yaml
 components:
   - ../../../components/helm-oci
