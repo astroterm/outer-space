@@ -13,7 +13,9 @@ resources:
   - ./grafana-alloy.yaml
   - ./grafana-loki.yaml
   - ./longhorn.yaml
+  - ./mc-router.yaml
   - ./metrics-server.yaml
+  - ./minecraft.yaml
   - ./prometheus-stack.yaml
   - ./rook-ceph.yaml
   - ./rook-cluster.yaml
