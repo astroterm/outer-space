@@ -4,6 +4,8 @@
 
 web:
   enabled: true
+  networkPolicy:
+    create: false
   httpRoute:
     enabled: true
     hostnames:
