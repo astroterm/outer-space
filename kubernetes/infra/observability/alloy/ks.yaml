@@ -5,14 +5,14 @@ metadata:
   name: &app alloy
   namespace: flux-system
 spec:
-  targetNamespace: &namespace monitoring
+  targetNamespace: &namespace observability
 
   interval: 1h
   retryInterval: 5m
   timeout: 10m
   prune: true
 
-  path: ./kubernetes/infra/monitoring/alloy/app
+  path: ./kubernetes/infra/observability/alloy/app
 
   sourceRef:
     kind: GitRepository
