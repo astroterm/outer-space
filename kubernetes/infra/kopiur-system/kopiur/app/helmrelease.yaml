@@ -9,7 +9,7 @@ spec:
   chartRef:
     kind: OCIRepository
     name: kopiur
-    namespace: kopiur-system
+    namespace: flux-system
   valuesFrom:
     - name: kopiur-values
       kind: ConfigMap
