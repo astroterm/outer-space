@@ -1,0 +1,3 @@
+features:
+  credentialProjection:
+    enabled: true

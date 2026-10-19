@@ -1,0 +1,23 @@
+---
+apiVersion: kopiur.home-operations.com/v1alpha1
+kind: ClusterRepository
+metadata:
+  name: cloudflare-r2
+spec:
+  allowedNamespaces:
+    all: true
+  backend:
+    s3:
+      bucket: outer-space
+      region: auto
+      endpoint: 639ec3447fd4d45dda11102b704a1598.r2.cloudflarestorage.com
+      auth:
+        secretRef:
+          name: cfr2-secret
+          namespace: kopiur-system
+  
+  encryption:
+    passwordSecretRef:
+      name: cfr2-secret
+      namespace: kopiur-system
+      key: KOPIA_PASSWORD
