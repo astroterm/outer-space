@@ -25,6 +25,6 @@ spec:
     kind: GitRepository
     name: outer-space
     path: kubernetes/flux
-    pullSecret: flux-system
+    pullSecret: flux-secret
     ref: refs/heads/main
     url: ssh://git@github.com/astroterm/outer-space.git

@@ -1,6 +1,3 @@
-# Secure Enclave
-age1se1qwluercwnz0l998tjcg9leg5djqgdph78958ncfj8s3x5nuqpk8lcueq3j9
-
 # Milky Way
 age1yubikey1q2y8txrc0l6f5qsvx4p94z42jrchddft5ad74py6xwwt4m36g5wxvwm4xjm
 

@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - alloy.yaml
   - loki.yaml
+  - prometheus-crd.yaml
   - prometheus-stack.yaml
 components:
   - ../../../components/helm-oci

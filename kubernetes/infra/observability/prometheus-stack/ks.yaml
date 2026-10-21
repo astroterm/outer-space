@@ -18,6 +18,10 @@ spec:
     kind: GitRepository
     name: outer-space
 
+  dependsOn:
+    - name: prometheus-crd
+      namespace: *namespace
+
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app

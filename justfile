@@ -41,9 +41,8 @@ apply:
     )
     (age -d
         -i ~/.ssh/id_ed25519
-        -i ~/.age/age-se
         -i age/identities.txt
-        talos/secrets.age
+        secrets/talos-cred.age
     ) | to text | tee {
         (talosctl gen config outer-space https://kube.cluster.lan:6443
             --with-secrets /dev/stdin
@@ -72,7 +71,7 @@ apply:
     ) | talosctl apply-config -n 192.168.2.5 --file /dev/stdin
 
 encrypt:
-    age -R age/recipients.txt -o talos/secrets.age ~/.talos/secrets.yaml
+    age -R age/recipients.txt -o secrets/talos-cred.age ~/.talos/secrets.yaml
 
 
 gatewayCRDs:
@@ -88,6 +87,11 @@ gatewayCRDs:
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_udproutes.yaml
 bootstrap: gatewayCRDs
     #!/usr/bin/env nu
+
+    (helm install prometheus-crd -n observability --create-namespace
+        oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds
+    )
+
     (helm install cilium
         oci://quay.io/cilium/charts/cilium -n kube-system
         -f kubernetes/infra/kube-system/cilium/app/values.yaml
@@ -104,7 +108,21 @@ bootstrap: gatewayCRDs
         -f kubernetes/infra/flux-system/flux-operator/app/values.yaml
     )
 
-    (flux create secret git flux-system
-        --url=ssh://git@github.com/astroterm/outer-space.git
-        --ssh-key-algorithm=ecdsa --ssh-ecdsa-curve=p521
+    kubectl create namespace external-secrets
+
+    (age -d
+        -i ~/.ssh/id_ed25519
+        -i age/identities.txt
+        secrets/flux-secret.age
+    ) | kubectl apply -f -
+
+    (age -d
+        -i ~/.ssh/id_ed25519
+        -i age/identities.txt
+        secrets/doppler-auth.age
+    ) | kubectl apply -f -
+
+    (kubectl apply -f
+        kubernetes/infra/flux-system/flux-instance/app/fluxinstance.yaml
     )
+    
