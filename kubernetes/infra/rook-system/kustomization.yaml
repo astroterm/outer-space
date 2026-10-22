@@ -6,3 +6,5 @@ resources:
   - ./rook-ceph/ks.yaml
   - ./ceph-csi/ks.yaml
   - ./rook-cluster/ks.yaml
+components:
+  - ../../components/flux-ks
