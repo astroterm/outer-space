@@ -26,3 +26,14 @@ port: 7445
 apiVersion: v1alpha1
 kind: KubeFlannelCNIConfig
 $patch: delete
+---
+apiVersion: v1alpha1
+kind: LinkAliasConfig
+name: net%d
+selector:
+    match: link.driver == "r8169"
+---
+apiVersion: v1alpha1
+kind: Layer2VIPConfig
+name: 192.168.2.10
+link: net0
