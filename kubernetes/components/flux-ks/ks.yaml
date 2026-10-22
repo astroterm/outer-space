@@ -11,6 +11,9 @@
   path: /spec/wait
   value: false
 - op: add
+  path: /spec/timeout
+  value: 10m
+- op: add
   path: /spec/sourceRef
   value:
     kind: GitRepository
