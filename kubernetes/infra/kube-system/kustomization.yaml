@@ -6,3 +6,5 @@ resources:
   - ./coredns/ks.yaml
   - ./cilium/ks.yaml
   - ./metrics-server/ks.yaml
+components:
+  - ../../components/flux-ks
