@@ -1,0 +1,17 @@
+- op: add
+  path: /metadata/namespace
+  value: flux-system
+- op: add
+  path: /spec/interval
+  value: 1h
+- op: add
+  path: /spec/prune
+  value: true
+- op: add
+  path: /spec/wait
+  value: false
+- op: add
+  path: /spec/sourceRef
+  value:
+    kind: GitRepository
+    name: outer-space

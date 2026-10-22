@@ -7,3 +7,5 @@ resources:
   - ./cert-manager/ks.yaml
   - ./cloudflare-ddns/ks.yaml
   - ./resources/ks.yaml
+components:
+  - ../../components/flux-ks
