@@ -6,4 +6,4 @@ metadata:
 spec:
   url: oci://ghcr.io/home-operations/charts-mirror/tailscale-operator
   ref:
-    tag: 1.104.1
+    tag: 1.104.2
