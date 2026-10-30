@@ -49,4 +49,3 @@ spec:
 
   dependsOn:
   - name: es-operator
-    namespace: external-secrets
