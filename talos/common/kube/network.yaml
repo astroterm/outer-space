@@ -35,5 +35,5 @@ selector:
 ---
 apiVersion: v1alpha1
 kind: Layer2VIPConfig
-name: 192.168.2.10
+name: 10.128.128.128
 link: net0

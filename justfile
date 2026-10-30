@@ -6,7 +6,7 @@ default: dash
 
 nodelist := ["10.128.16.1", "10.128.16.2", "10.128.16.3"]
 nodes := join_list(nodelist, ',')
-node := "192.168.2.3"
+node := "10.128.16.1"
 version := "v1.14.4"
 image := "8b690dfa8f9cebd7208a3f2f728f06377b5f468334f480485ad3f77d0cbf107d"
 endpoint := "https://10.128.128.128:6443"

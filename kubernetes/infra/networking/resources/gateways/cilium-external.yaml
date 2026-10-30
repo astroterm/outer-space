@@ -6,7 +6,7 @@ metadata:
 spec:
   addresses:
     - type: IPAddress
-      value: 192.168.2.128
+      value: 10.128.96.0
   gatewayClassName: cilium
   listeners:
     - name: outer-space

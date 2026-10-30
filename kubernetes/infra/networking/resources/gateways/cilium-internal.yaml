@@ -6,7 +6,7 @@ metadata:
 spec:
   addresses:
     - type: IPAddress
-      value: 192.168.2.180
+      value: 10.128.64.0
   gatewayClassName: cilium
   listeners:
     - name: astrolab
