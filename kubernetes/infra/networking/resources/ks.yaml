@@ -45,7 +45,7 @@ metadata:
 spec:
   targetNamespace: networking
 
-  path: ./kubernetes/infra/networking/resources/externalsecret.yaml
+  path: ./kubernetes/infra/networking/resources/secrets
 
   dependsOn:
   - name: es-operator

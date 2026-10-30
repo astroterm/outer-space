@@ -22,7 +22,7 @@ metadata:
 spec:
   targetNamespace: &namespace external-secrets
 
-  path: ./kubernetes/infra/external-secrets/es-operator/secretstore.yaml
+  path: ./kubernetes/infra/external-secrets/es-operator/store
 
   dependsOn:
   - name: es-operator
