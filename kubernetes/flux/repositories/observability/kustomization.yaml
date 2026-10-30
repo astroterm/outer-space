@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - alloy.yaml
   - loki.yaml
+  - grafana-operator.yaml
   - prometheus-crd.yaml
   - prometheus-stack.yaml
 components:

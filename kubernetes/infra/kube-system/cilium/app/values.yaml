@@ -7,7 +7,7 @@ routingMode: native
 
 rollOutCiliumPods: true
 kubeProxyReplacement: true
-devices: enp1s0
+devices: net0
 
 k8sServiceHost: localhost
 k8sServicePort: 7445

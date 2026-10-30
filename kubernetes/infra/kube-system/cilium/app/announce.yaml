@@ -11,8 +11,16 @@ spec:
 apiVersion: cilium.io/v2
 kind: CiliumLoadBalancerIPPool
 metadata:
-  name: ip-pool
+  name: internal-pool
 spec:
   blocks:
-    - start: 192.168.2.100
-      stop: 192.168.2.199
+    - cidr: 10.128.64.0/24
+---
+apiVersion: cilium.io/v2
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: external-pool
+spec:
+  blocks:
+    - cidr: 10.128.96.0/24
+
