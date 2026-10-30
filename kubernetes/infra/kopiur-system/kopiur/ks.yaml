@@ -25,3 +25,5 @@ spec:
 
   dependsOn:
     - name: kopiur
+    - name: es-operator
+      namespace: external-secrets
