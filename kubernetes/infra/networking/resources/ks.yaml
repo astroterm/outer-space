@@ -37,3 +37,16 @@ spec:
 
   dependsOn:
     - name: certificates
+---
+apiVersion: kustomize.tookit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+name: cf-secret
+spec:
+  targetNamespace: networking
+
+  path: ./kubernetes/infra/networking/resources/externalsecret.yaml
+
+  dependsOn:
+  - name: es-operator
+    namespace: external-secrets
