@@ -6,7 +6,7 @@ metadata:
 spec:
   loadBalancerIPs: true
   interfaces:
-    - enp1s0
+    - net0
 ---
 apiVersion: cilium.io/v2
 kind: CiliumLoadBalancerIPPool
@@ -15,6 +15,9 @@ metadata:
 spec:
   blocks:
     - cidr: 10.128.64.0/24
+  serviceSelector:
+    matchLabels:
+      network: internal
 ---
 apiVersion: cilium.io/v2
 kind: CiliumLoadBalancerIPPool
@@ -23,4 +26,7 @@ metadata:
 spec:
   blocks:
     - cidr: 10.128.96.0/24
+  serviceSelector:
+    matchLabels:
+      network: external
 
