@@ -1,0 +1,15 @@
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+hostname: sirius
+auto: off
+
+---
+apiVersion: v1alpha1
+kind: LinkConfig
+name: net0
+up: true
+addresses:
+  - address: 10.128.16.3/16
+routes:
+  - gateway: 10.128.0.1
