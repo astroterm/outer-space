@@ -5,8 +5,8 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
 configMapGenerator:
-  - name: cnpg-values
-    files:
-      - values.yaml=values.yaml
+- name: cnpg-values
+  files:
+    - values.yaml=values.yaml
 generatorOptions:
   disableNameSuffixHash: true

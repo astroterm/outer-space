@@ -9,11 +9,11 @@ spec:
   path: ./kubernetes/infra/observability/prometheus-stack/app
 
   dependsOn:
-    - name: prometheus-crd
-      namespace: *namespace
+  - name: prometheus-crd
+    namespace: *namespace
 
   healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
-      name: *app
-      namespace: *namespace
+  - apiVersion: helm.toolkit.fluxcd.io/v2
+    kind: HelmRelease
+    name: *app
+    namespace: *namespace

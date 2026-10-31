@@ -11,7 +11,7 @@ spec:
 
   ingress:
   - fromEntities:
-    - ingress
+      - ingress
     toPorts:
     - ports:
       - port: "9080"

@@ -10,13 +10,13 @@ spec:
   path: ./kubernetes/infra/netadmin/tailscale/app
 
   healthChecks:
-    - apiVersion: helm.toolkit.fluxcd.io/v2
-      kind: HelmRelease
-      name: tailscale-operator
-      namespace: *namespace
+  - apiVersion: helm.toolkit.fluxcd.io/v2
+    kind: HelmRelease
+    name: tailscale-operator
+    namespace: *namespace
   
   dependsOn:
-    - name: external-secrets
+  - name: external-secrets
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -30,4 +30,4 @@ spec:
   path: ./kubernetes/infra/netadmin/tailscale/resources
 
   dependsOn:
-    - name: tailscale
+  - name: tailscale

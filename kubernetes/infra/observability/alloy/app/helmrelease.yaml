@@ -10,5 +10,5 @@ spec:
     name: alloy
     namespace: flux-system
   valuesFrom:
-    - name: alloy-values
-      kind: ConfigMap
+  - name: alloy-values
+    kind: ConfigMap

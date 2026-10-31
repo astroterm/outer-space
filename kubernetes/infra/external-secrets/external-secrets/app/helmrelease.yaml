@@ -9,6 +9,4 @@ spec:
     kind: OCIRepository
     name: external-secrets
     namespace: flux-system
-  valuesFrom:
-    - kind: ConfigMap
-      name: es-values
+

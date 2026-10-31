@@ -9,7 +9,7 @@ spec:
   path: ./kubernetes/infra/networking/resources/issuers
 
   dependsOn:
-    - name: cert-manager
+  - name: cert-manager
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -22,8 +22,8 @@ spec:
   path: ./kubernetes/infra/networking/resources/certificates
 
   dependsOn:
-    - name: cert-manager
-    - name: issuers
+  - name: cert-manager
+  - name: issuers
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -36,7 +36,7 @@ spec:
   path: ./kubernetes/infra/networking/resources/gateways
 
   dependsOn:
-    - name: certificates
+  - name: certificates
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization

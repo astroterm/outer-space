@@ -9,8 +9,8 @@ controllers:
           TZ: Australia/Sydney
           IP6_PROVIDER: none
         envFrom:
-          - secretRef:
-              name: cloudflare-secret
+        - secretRef:
+            name: cloudflare-secret
         securityContext:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true

@@ -10,5 +10,5 @@ spec:
     name: rook-cluster
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: rook-cluster-values
+  - kind: ConfigMap
+    name: rook-cluster-values

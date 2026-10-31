@@ -9,6 +9,3 @@ spec:
     kind: OCIRepository
     name: rook-ceph
     namespace: flux-system
-  valuesFrom:
-    - kind: ConfigMap
-      name: rook-ceph-values

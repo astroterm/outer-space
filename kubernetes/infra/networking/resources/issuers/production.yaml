@@ -8,12 +8,12 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-      - dns01:
-          cloudflare:
-            apiTokenSecretRef:
-              name: cloudflare-secret
-              key: CLOUDFLARE_API_TOKEN
-        selector:
-          dnsZones:
-            - "astrolab.systems"
-            - "outer-space.io"
+    - dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            name: cloudflare-secret
+            key: CLOUDFLARE_API_TOKEN
+      selector:
+        dnsZones:
+          - "astrolab.systems"
+          - "outer-space.io"

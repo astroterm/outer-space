@@ -10,5 +10,5 @@ spec:
     name: metrics-server
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: metrics-values
+  - kind: ConfigMap
+    name: metrics-values

@@ -5,17 +5,17 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - type: IPAddress
-      value: 10.128.64.0
+  - type: IPAddress
+    value: 10.128.64.0
   gatewayClassName: cilium
   listeners:
-    - name: astrolab
-      hostname: "*.astrolab.systems"
-      port: 443
-      protocol: HTTPS
-      allowedRoutes:
-        namespaces:
-          from: All
-      tls:
-        certificateRefs:
-          - name: astrolab-cert
+  - name: astrolab
+    hostname: "*.astrolab.systems"
+    port: 443
+    protocol: HTTPS
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      certificateRefs:
+        - name: astrolab-cert

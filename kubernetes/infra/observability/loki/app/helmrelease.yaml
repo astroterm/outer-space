@@ -10,8 +10,8 @@ spec:
     name: loki
     namespace: flux-system
   dependsOn:
-    - name: rook-cluster
-      namespace: rook-system
+  - name: rook-cluster
+    namespace: rook-system
   valuesFrom:
-    - name: loki-values
-      kind: ConfigMap
+  - name: loki-values
+    kind: ConfigMap

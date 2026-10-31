@@ -10,5 +10,5 @@ spec:
     name: ceph-csi
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: ceph-csi-values
+  - kind: ConfigMap
+    name: ceph-csi-values

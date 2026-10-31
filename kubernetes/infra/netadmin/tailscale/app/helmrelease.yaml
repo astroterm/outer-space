@@ -10,15 +10,15 @@ spec:
     name: tailscale
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: tailscale-values
+  - kind: ConfigMap
+    name: tailscale-values
 
-    - targetPath: oauth.clientId
-      kind: Secret
-      name: tailscale-auth
-      valuesKey: clientId
+  - targetPath: oauth.clientId
+    kind: Secret
+    name: tailscale-auth
+    valuesKey: clientId
 
-    - targetPath: oauth.clientSecret
-      kind: Secret
-      name: tailscale-auth
-      valuesKey: clientSecret
+  - targetPath: oauth.clientSecret
+    kind: Secret
+    name: tailscale-auth
+    valuesKey: clientSecret

@@ -24,15 +24,15 @@ prometheusOperator:
   admissionWebhooks:
     deployment:
       tolerations:
-        - key: node-role.kubernetes.io/control-plane
-          operator: Exists
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
     patch:
       tolerations:
-        - key: node-role.kubernetes.io/control-plane
-          operator: Exists
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
   tolerations:
-    - key: node-role.kubernetes.io/control-plane
-      operator: Exists
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
 
 prometheus:
   prometheusSpec:
@@ -51,8 +51,8 @@ prometheus:
       limits:
         memory: 2500Mi
     tolerations:
-      - key: node-role.kubernetes.io/control-plane
-        operator: Exists
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
     storageSpec:
       volumeClaimTemplate:
         spec:
@@ -86,11 +86,11 @@ kube-state-metrics:
 grafana:
   enabled: false
   additionalDataSources:
-    - name: Loki
-      type: loki
-      access: proxy
-      url: http://loki.observability.svc.cluster.local:3100
-      isDefault: false
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki.observability.svc.cluster.local:3100
+    isDefault: false
 
   grafana.ini:
     auth:

@@ -10,5 +10,5 @@ spec:
     name: cloudnative-pg
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: cnpg-values
+  - kind: ConfigMap
+    name: cnpg-values

@@ -9,4 +9,4 @@ spec:
   path: ./kubernetes/infra/flux-system/flux-instance/app
 
   dependsOn:
-    - name: flux-operator
+  - name: flux-operator

@@ -10,8 +10,8 @@ spec:
     name: prometheus-stack
     namespace: flux-system
   dependsOn:
-    - name: rook-cluster
-      namespace: rook-system
+  - name: rook-cluster
+    namespace: rook-system
   valuesFrom:
-    - name: prometheus-values
-      kind: ConfigMap
+  - name: prometheus-values
+    kind: ConfigMap

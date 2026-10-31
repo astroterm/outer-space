@@ -11,5 +11,5 @@ spec:
     name: kopiur
     namespace: flux-system
   valuesFrom:
-    - name: kopiur-values
-      kind: ConfigMap
+  - name: kopiur-values
+    kind: ConfigMap

@@ -11,5 +11,5 @@ spec:
     name: cilium
     namespace: flux-system
   valuesFrom:
-    - name: cilium-values
-      kind: ConfigMap
+  - name: cilium-values
+    kind: ConfigMap

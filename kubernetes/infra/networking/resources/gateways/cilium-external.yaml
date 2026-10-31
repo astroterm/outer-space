@@ -5,17 +5,17 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - type: IPAddress
-      value: 10.128.96.0
+  - type: IPAddress
+    value: 10.128.96.0
   gatewayClassName: cilium
   listeners:
-    - name: outer-space
-      hostname: "*.outer-space.io"
-      port: 443
-      protocol: HTTPS
-      allowedRoutes:
-        namespaces:
-          from: All
-      tls:
-        certificateRefs:
-          - name: outer-space-cert
+  - name: outer-space
+    hostname: "*.outer-space.io"
+    port: 443
+    protocol: HTTPS
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      certificateRefs:
+        - name: outer-space-cert
