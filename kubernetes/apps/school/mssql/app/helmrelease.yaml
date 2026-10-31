@@ -10,5 +10,5 @@ spec:
     name: app-template
     namespace: flux-system
   valuesFrom:
-    - name: mssql-values
-      kind: ConfigMap
+  - name: mssql-values
+    kind: ConfigMap

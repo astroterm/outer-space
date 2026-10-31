@@ -10,5 +10,5 @@ spec:
     name: mc-router
     namespace: flux-system
   valuesFrom:
-    - kind: ConfigMap
-      name: mc-router-values
+  - kind: ConfigMap
+    name: mc-router-values
