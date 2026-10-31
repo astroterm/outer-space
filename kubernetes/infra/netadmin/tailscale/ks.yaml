@@ -16,7 +16,7 @@ spec:
       namespace: *namespace
   
   dependsOn:
-    - name: es-operator
+    - name: external-secrets
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1

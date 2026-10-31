@@ -48,4 +48,4 @@ spec:
   path: ./kubernetes/infra/networking/resources/secrets
 
   dependsOn:
-  - name: es-operator
+  - name: external-secrets

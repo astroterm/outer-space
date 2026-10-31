@@ -25,4 +25,4 @@ spec:
 
   dependsOn:
     - name: kopiur
-    - name: es-operator
+    - name: external-secrets
