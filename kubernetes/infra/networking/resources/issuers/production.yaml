@@ -16,4 +16,4 @@ spec:
       selector:
         dnsZones:
           - "astrolab.systems"
-          - "outer-space.io"
+          - "labsolar.io"

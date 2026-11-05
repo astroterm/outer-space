@@ -9,8 +9,8 @@ spec:
     value: 10.128.96.0
   gatewayClassName: cilium
   listeners:
-  - name: outer-space
-    hostname: "*.outer-space.io"
+  - name: solar
+    hostname: "*.labsolar.io"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -18,4 +18,4 @@ spec:
         from: All
     tls:
       certificateRefs:
-        - name: outer-space-cert
+        - name: solar-cert

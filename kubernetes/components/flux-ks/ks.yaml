@@ -17,4 +17,4 @@
   path: /spec/sourceRef
   value:
     kind: GitRepository
-    name: outer-space
+    name: solar

@@ -1,15 +1,5 @@
 ---
 apiVersion: v1alpha1
-kind: RawVolumeConfig
-name: osd
-provisioning:
-  diskSelector:
-    match: disk.transport == "nvme"
-  minSize: 1280GiB
-  maxSize: 1280GiB
-
----
-apiVersion: v1alpha1
 kind: VolumeConfig
 name: EPHEMERAL
 
@@ -18,3 +8,29 @@ provisioning:
     match: system_disk
   minSize: 100GiB
   maxSize: 100GiB
+
+---
+apiVersion: v1alpha1
+kind: RawVolumeConfig
+name: osd
+provisioning:
+  diskSelector:
+    match: disk.transport == "nvme"
+  minSize: 1280GiB
+  maxSize: 1280GiB
+---
+apiVersion: v1alpha1
+kind: RawVolumeConfig
+name: lvm
+provisioning:
+  diskSelector:
+    match: disk.transport == "nvme"
+  minSize: 450GiB
+  maxSize: 450GiB
+---
+apiVersion: v1alpha1
+kind: LVMVolumeGroupConfig
+name: openebs
+provisioning:
+  volumeSelector:
+    match: volume.partition_label == "r-lvm"

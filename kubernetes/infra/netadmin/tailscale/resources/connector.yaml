@@ -1,9 +1,9 @@
 apiVersion: tailscale.com/v1alpha1
 kind: Connector
 metadata:
-  name: outer-space
+  name: solar
 spec:
-  hostname: outer-space
+  hostname: solar
   subnetRouter:
     advertiseRoutes:
       - 10.128.16.0/24

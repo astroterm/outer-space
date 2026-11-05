@@ -20,20 +20,6 @@ reboot target=nodes:
 shutdown target=nodes:
     talosctl shutdown -n {{target}}
 
-# apply target=nodes:
-#     age -d \
-#         -i ~/.age/age-se \
-#         -i ~/.ssh/id_ed25519 \
-#         -i age/identities.txt \
-#         talos/secrets.age \
-#     | talosctl gen config outer-space https://kube.cluster.lan:6443 \
-#         --with-secrets /dev/stdin \
-#         --install-disk /dev/nvme0n1 \
-#         --install-image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}} \
-#         --config-patch @talos/patch.yaml \
-#         --output-types controlplane --output - \
-#     | talosctl apply-config -n {{target}} --file /dev/stdin
-
 upgrade node:
     talosctl upgrade -n {{node}} --image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}}
 apply *flags:
@@ -57,7 +43,7 @@ apply *flags:
             "10.128.16.3" => "sirius.yaml"
             _ => "sol"
         }
-        $secrets | (talosctl gen config outer-space {{endpoint}}
+        $secrets | (talosctl gen config solar {{endpoint}}
             --with-secrets /dev/stdin
             --install-disk /dev/nvme0n1
             --install-image factory.talos.dev/metal-installer-secureboot/{{image}}:{{version}}
@@ -67,10 +53,22 @@ apply *flags:
         ) | talosctl apply-config -n $node --file /dev/stdin {{flags}}
     }
 
-encrypt:
-    age -R age/recipients.txt -o secrets/talos-cred.age ~/.talos/secrets.yaml
+bootstrap:
+    #!/usr/bin/env nu
 
+    talosctl bootstrap -n {{node}}
 
+    talosctl kubeconfig -n {{node}}
+
+    (kubectl get csr -o json
+        | from json
+        | get items
+        | where {|csr| $csr.status.conditions == [] } 
+        | get metadata.name 
+        | each {|name| kubectl certificate approve $name }
+    )
+
+    just install
 gatewayCRDs:
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gatewayclasses.yaml
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gateways.yaml
@@ -82,14 +80,15 @@ gatewayCRDs:
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_listenersets.yaml
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_tcproutes.yaml
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_udproutes.yaml
-bootstrap: gatewayCRDs
+
+install: gatewayCRDs
     #!/usr/bin/env nu
 
     (helm upgrade --install prometheus-crd -n observability --wait --create-namespace
         oci://ghcr.io/prometheus-community/charts/prometheus-operator-crds
     )
 
-    (helm upgrade --install cilium --wait --wait-for-jobs
+    (helm upgrade --install cilium
         oci://quay.io/cilium/charts/cilium -n kube-system
         -f kubernetes/infra/kube-system/cilium/app/values.yaml
     )

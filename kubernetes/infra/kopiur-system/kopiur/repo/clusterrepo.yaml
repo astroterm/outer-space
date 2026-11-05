@@ -8,7 +8,7 @@ spec:
     all: true
   backend:
     s3:
-      bucket: outer-space
+      bucket: solar
       region: auto
       endpoint: 639ec3447fd4d45dda11102b704a1598.r2.cloudflarestorage.com
       auth:
