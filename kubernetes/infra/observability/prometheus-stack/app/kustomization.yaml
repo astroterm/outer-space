@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - httproute.yaml
+components:
+  - ../../../../components/helm-release
 configMapGenerator:
   - name: prometheus-values
     files:

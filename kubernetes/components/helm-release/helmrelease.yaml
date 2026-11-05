@@ -6,3 +6,4 @@
   path: /spec/upgrade
   value:
     crds: CreateReplace
+    cleanupOnFail: true

@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - helmrelease.yaml
   - announce.yaml
+components:
+  - ../../../../components/helm-release
 configMapGenerator:
 - name: cilium-values
   files:
