@@ -56,6 +56,8 @@ apply *flags:
 install:
     #!/usr/bin/env nu
 
+    just apply --insecure
+
     talosctl bootstrap -n {{node}}
 
     talosctl kubeconfig -n {{node}}
