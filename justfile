@@ -53,7 +53,7 @@ apply *flags:
         ) | talosctl apply-config -n $node --file /dev/stdin {{flags}}
     }
 
-bootstrap:
+install:
     #!/usr/bin/env nu
 
     talosctl bootstrap -n {{node}}
@@ -68,7 +68,6 @@ bootstrap:
         | each {|name| kubectl certificate approve $name }
     )
 
-    just install
 gatewayCRDs:
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gatewayclasses.yaml
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_gateways.yaml
@@ -81,7 +80,7 @@ gatewayCRDs:
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_tcproutes.yaml
     kubectl apply --server-side -f https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.6.1/config/crd/experimental/gateway.networking.k8s.io_udproutes.yaml
 
-install: gatewayCRDs
+bootstrap: gatewayCRDs
     #!/usr/bin/env nu
 
     (helm upgrade --install prometheus-crd -n observability --wait --create-namespace
