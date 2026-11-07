@@ -22,3 +22,6 @@ spec:
   targetNamespace: observability
 
   path: ./kubernetes/infra/observability/grafana-operator/instance
+
+  dependsOn:
+    - name: grafana-operator
