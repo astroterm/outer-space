@@ -7,5 +7,6 @@ resources:
   - loki/ks.yaml
   - prometheus-stack/ks.yaml
   - prometheus-crd/ks.yaml
+  - grafana-operator/ks.yaml
 components:
   - ../../components/flux-ks
