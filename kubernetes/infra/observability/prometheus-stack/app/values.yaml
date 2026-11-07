@@ -44,7 +44,7 @@ prometheus:
     scrapeConfigSelectorNilUsesHelmValues: false
     walCompression: true
     retention: 14d
-    retentionSize: 70GB
+    retentionSize: 45GB
     resources:
       requests:
         cpu: 200m
@@ -59,7 +59,7 @@ prometheus:
           storageClassName: ceph-block
           resources:
             requests:
-              storage: 75Gi
+              storage: 50Gi
 
 nodeExporter:
   enabled: true
