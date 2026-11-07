@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: grafana-operator
+spec:
+  interval: 1h
+  chartRef:
+    kind: OCIRepository
+    name: grafana-operator
+    namespace: flux-system
+  dependsOn:
+  - name: rook-cluster
+    namespace: rook-system
+  valuesFrom:
+  - name: grafana-values
+    kind: ConfigMap
