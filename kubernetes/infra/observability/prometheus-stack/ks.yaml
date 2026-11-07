@@ -10,7 +10,6 @@ spec:
 
   dependsOn:
   - name: prometheus-crd
-    namespace: *namespace
 
   healthChecks:
   - apiVersion: helm.toolkit.fluxcd.io/v2
