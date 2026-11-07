@@ -8,6 +8,3 @@ spec:
     matchLabels:
       dashboards: grafana
   url: https://grafana.com/api/dashboards/20842/revisions/3/download
-  datasources:
-    - datasourceName: prometheus
-      inputName: DS_PROMETHEUS
